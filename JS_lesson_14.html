@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>JS_lesson_14: Функция вычитания (My Sub)</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            margin: 40px;
+            line-height: 1.7;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #4a90e2;
+            border-bottom: 2px solid #4a90e2;
+            padding-bottom: 6px;
+            margin-top: 40px;
+        }
+        p, pre {
+            margin-left: 20px;
+        }
+        pre {
+            background-color: #eef;
+            padding: 12px;
+            border-left: 4px solid #4a90e2;
+            overflow-x: auto;
+        }
+        ul {
+            margin-left: 50px;
+        }
+        code {
+            background-color: #f2f2f2;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JS_lesson_14: Функция вычитания (My Sub)</h1>
+
+    <h2>Цель урока</h2>
+    <p>Научиться создавать функцию, которая принимает два числа и <strong>возвращает разность</strong> между ними (то есть результат вычитания).</p>
+
+    <h2>Оператор вычитания <code>-</code></h2>
+    <p>Знак <code>-</code> используется для вычитания одного числа из другого:</p>
+    <pre>
+let result = 10 - 3; // 7
+    </pre>
+
+    <h2>Порядок важен!</h2>
+    <p>В отличие от сложения, <strong>в вычитании важен порядок операндов</strong>:</p>
+    <ul>
+        <li><code>10 - 3 = 7</code></li>
+        <li><code>3 - 10 = -7</code></li>
+    </ul>
+
+    <h2>Создание функции my_sub</h2>
+    <p>Функция будет принимать два параметра и возвращать результат <code>param_1 - param_2</code>.</p>
+
+    <pre>
+function my_sub(a, b) {
+  return a - b;
+}
+    </pre>
+
+    <h3>Примеры вызова:</h3>
+    <pre>
+console.log(my_sub(10, 5));  // 5
+console.log(my_sub(5, 10));  // -5
+console.log(my_sub(3, 3));   // 0
+    </pre>
+
+    <h2>Что такое параметры функции?</h2>
+    <p>Параметры — это значения, которые передаются внутрь функции при её вызове. Они работают как переменные.</p>
+    <pre>
+function greet(name) {
+  console.log("Привет, " + name);
+}
+greet("Elmar");
+    </pre>
+
+    <h2>Ключевое слово return</h2>
+    <p>Оно позволяет <strong>вернуть результат</strong> из функции наружу. Без <code>return</code> функция ничего не отдаёт.</p>
+
+    <h2>Проверка на типы (дополнительно)</h2>
+    <p>Можно добавить проверку, что оба аргумента — числа:</p>
+    <pre>
+function my_sub(a, b) {
+  if (typeof a !== "number" || typeof b !== "number") {
+    return "Ошибка: введите два числа";
+  }
+  return a - b;
+}
+    </pre>
+
+    <h2>Итоги</h2>
+    <ul>
+        <li><code>-</code> — оператор вычитания</li>
+        <li>Порядок <strong>имеет значение</strong> — <code>a - b</code> не то же самое, что <code>b - a</code></li>
+        <li>Функция может возвращать результат через <code>return</code></li>
+        <li>Можно использовать <code>console.log()</code> для проверки результата</li>
+        <li>Внимание к типам данных — полезная привычка</li>
+    </ul>
+</body>
+</html>

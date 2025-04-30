@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>JS_lesson_4: Условия, логика и изменение DOM</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            margin: 40px;
+            line-height: 1.7;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #4a90e2;
+            border-bottom: 2px solid #4a90e2;
+            padding-bottom: 6px;
+            margin-top: 40px;
+        }
+        p, pre {
+            margin-left: 20px;
+        }
+        pre {
+            background-color: #eef;
+            padding: 12px;
+            border-left: 4px solid #4a90e2;
+            overflow-x: auto;
+        }
+        ul {
+            margin-left: 50px;
+        }
+        code {
+            background-color: #f2f2f2;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JS_lesson_4: Условия, логика и изменение DOM через JavaScript</h1>
+
+    <h2>ex04 – First If Else</h2>
+    <p>В программировании часто нужно проверять какие-то условия: например, больше ли число 10, равно ли что-то другому, или подходит ли пользователь по возрасту. 
+    Для таких проверок в JavaScript используется конструкция <code>if / else</code>.</p>
+
+    <p><strong>if</strong> переводится как "если", а <strong>else</strong> — "иначе". Это условная логика: если что-то верно, делай одно, иначе — делай другое.</p>
+
+    <pre>
+let nbr = 10;
+
+if (nbr > 20) {
+  console.log("nbr is greater than 20");
+} else {
+  console.log("nbr is less than or equal to 20");
+}
+    </pre>
+
+    <p>Здесь переменная <code>nbr</code> сравнивается с числом 20. Если <code>nbr</code> больше 20 — выполняется код внутри <code>if</code>. 
+    Если нет — выполняется <code>else</code>.</p>
+
+    <h3>Операторы сравнения:</h3>
+    <ul>
+        <li><code>></code> — больше</li>
+        <li><code><</code> — меньше</li>
+        <li><code>==</code> — равно по значению</li>
+        <li><code>===</code> — строгое равенство (и по типу, и по значению)</li>
+        <li><code>!=</code> — не равно</li>
+        <li><code>!==</code> — строго не равно</li>
+        <li><code>>=</code> — больше или равно</li>
+        <li><code><=</code> — меньше или равно</li>
+    </ul>
+
+    <p><strong>Важно:</strong> в JavaScript есть разница между <code>==</code> и <code>===</code>. Например, <code>5 == "5"</code> даст <code>true</code>, 
+    но <code>5 === "5"</code> даст <code>false</code>, потому что типы разные (число и строка).</p>
+
+    <h2>ex05 – First If Multiple Conditions</h2>
+    <p>Иногда нужно проверять <strong>сразу несколько условий</strong>. Например: "если число больше 10 и меньше 20", 
+    или "если пользователь — админ или модератор". В таких случаях применяются логические операторы:</p>
+
+    <h3>Логические операторы:</h3>
+    <ul>
+        <li><code>&&</code> — логическое "И": обе части должны быть <code>true</code></li>
+        <li><code>||</code> — логическое "ИЛИ": хотя бы одна часть должна быть <code>true</code></li>
+        <li><code>!</code> — логическое "НЕ": инвертирует результат</li>
+    </ul>
+
+    <p>Примеры:</p>
+    <pre>
+let a = 10, b = 5, c = 15, d = 10;
+
+if (a > b && a < c && a === d) {
+  console.log("a is between b and c and equal to d");
+}
+
+let x = 10, y = 20, z = 5;
+
+if (z > x || y > x) {
+  console.log("z OR y is greater than x");
+}
+
+let loggedIn = false;
+
+if (!loggedIn) {
+  console.log("Пользователь не вошёл");
+}
+    </pre>
+
+    <p>Таким образом можно строить сложную логику. Например, условие <code>if (userAge > 18 && isMember === true)</code> означает: 
+    если возраст больше 18 и пользователь — участник, тогда выполняем код.</p>
+
+    <h2>ex06 – Change Box Color With JavaScript</h2>
+    <p>На этом шаге мы учимся взаимодействовать с HTML через JavaScript. Это называется <strong>DOM (Document Object Model)</strong> — модель, 
+    которая позволяет JavaScript видеть HTML-страницу как структуру из объектов (дерево элементов).</p>
+
+    <p>Каждому HTML-элементу можно дать <code>id</code>, по которому мы его "найдём" из JavaScript:</p>
+
+    <pre>
+&lt;div id="my_box"&gt;&lt;/div&gt;
+    </pre>
+
+    <h3>Как получить доступ к элементу?</h3>
+    <pre>
+let my_box = document.getElementById("my_box");
+    </pre>
+
+    <h3>Как изменить цвет фона элемента?</h3>
+    <pre>
+my_box.style.backgroundColor = "#00FF00"; // зелёный
+    </pre>
+
+    <h3>Можно менять и другие стили:</h3>
+    <pre>
+my_box.style.width = "200px";
+my_box.style.height = "100px";
+my_box.style.border = "2px solid black";
+my_box.style.display = "none"; // скрыть элемент
+    </pre>
+
+    <h3>Полный пример:</h3>
+    <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Change Box Color&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div id="my_box" style="width:100px; height:100px; background-color:#ff0000;"&gt;&lt;/div&gt;
+  &lt;button onclick="changeColor()"&gt;Изменить цвет&lt;/button&gt;
+
+  &lt;script&gt;
+    function changeColor() {
+      let my_box = document.getElementById("my_box");
+      my_box.style.backgroundColor = "#00FF00";
+    }
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+
+    <p>Когда пользователь нажимает кнопку — срабатывает функция <code>changeColor()</code>, которая меняет стиль коробки.</p>
+
+    <h2>Заключение</h2>
+    <ul>
+        <li><strong>if/else</strong> — управляет логикой на основе условий</li>
+        <li><strong>==, ===, !=, &lt;, &gt;</strong> — операторы сравнения</li>
+        <li><strong>&&</strong> и <strong>||</strong> — логика "и"/"или"</li>
+        <li><strong>!</strong> — инвертирует значение</li>
+        <li><strong>DOM</strong> — структура страницы, которую можно менять из JS</li>
+        <li><strong>getElementById()</strong> — получить HTML-элемент</li>
+        <li><strong>.style</strong> — доступ к CSS-стилям элемента</li>
+    </ul>
+</body>
+</html>

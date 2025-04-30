@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>JS_lesson_13: Функция сложения чисел (My Add)</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            margin: 40px;
+            line-height: 1.7;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #4a90e2;
+            border-bottom: 2px solid #4a90e2;
+            padding-bottom: 6px;
+            margin-top: 40px;
+        }
+        p, pre {
+            margin-left: 20px;
+        }
+        pre {
+            background-color: #eef;
+            padding: 12px;
+            border-left: 4px solid #4a90e2;
+            overflow-x: auto;
+        }
+        ul {
+            margin-left: 50px;
+        }
+        code {
+            background-color: #f2f2f2;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JS_lesson_13: Функция сложения (My Add)</h1>
+
+    <h2>Цель урока</h2>
+    <p>Научиться создавать функцию, которая принимает два числа, <strong>складывает</strong> их и <strong>возвращает результат</strong>.</p>
+
+    <h2>Что такое функция с параметрами?</h2>
+    <p>Функция — это мини-программа, которую мы можем запускать. У неё могут быть <strong>параметры</strong> — это как входные данные.</p>
+
+    <h3>Пример:</h3>
+    <pre>
+function greet(name) {
+  console.log("Привет, " + name + "!");
+}
+greet("Elmar"); // Привет, Elmar!
+    </pre>
+
+    <h2>Сложение двух чисел</h2>
+    <p>В JavaScript знак <code>+</code> используется для <strong>сложения чисел</strong>:</p>
+    <pre>
+let sum = 5 + 3;
+console.log(sum); // 8
+    </pre>
+
+    <p>Ты можешь складывать:</p>
+    <ul>
+        <li>Число + число → <code>4 + 6 = 10</code></li>
+        <li>Переменная + переменная → <code>a + b</code></li>
+    </ul>
+
+    <h2>Создание функции my_add</h2>
+    <p>Функция будет принимать два числа и возвращать их сумму.</p>
+
+    <pre>
+function my_add(a, b) {
+  return a + b;
+}
+    </pre>
+
+    <p>Теперь мы можем использовать функцию и видеть результат:</p>
+    <pre>
+console.log(my_add(2, 3)); // 5
+console.log(my_add(10, -4)); // 6
+    </pre>
+
+    <h2>Что делает return?</h2>
+    <p><code>return</code> — это команда, которая <strong>возвращает результат из функции</strong> обратно в программу.</p>
+
+    <ul>
+        <li>Она завершает выполнение функции</li>
+        <li>Она передаёт результат, который можно сохранить или напечатать</li>
+    </ul>
+
+    <h3>Пример:</h3>
+    <pre>
+let result = my_add(4, 7); // result = 11
+console.log(result);
+    </pre>
+
+    <h2>Дополнительные темы</h2>
+
+    <h3>Тип данных: число (integer)</h3>
+    <ul>
+        <li><code>let x = 5;</code> — целое число</li>
+        <li><code>typeof x</code> даст <code>"number"</code></li>
+    </ul>
+
+    <h3>Валидация (проверка):</h3>
+    <p>Можно добавить проверку, что переданы именно числа:</p>
+    <pre>
+function my_add(a, b) {
+  if (typeof a !== "number" || typeof b !== "number") {
+    return "Ошибка: нужны числа";
+  }
+  return a + b;
+}
+    </pre>
+
+    <h3>Отладка с console.log:</h3>
+    <pre>
+function my_add(a, b) {
+  console.log("a =", a, ", b =", b);
+  return a + b;
+}
+    </pre>
+
+    <h2>Итоги</h2>
+    <ul>
+        <li>Функции могут принимать параметры (входные данные)</li>
+        <li>Знак <code>+</code> складывает два числа</li>
+        <li><code>return</code> — возвращает результат</li>
+        <li>Можно вызывать функцию с разными значениями</li>
+        <li>Можно проверять тип данных, используя <code>typeof</code></li>
+    </ul>
+</body>
+</html>

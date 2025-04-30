@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>JS_lesson_terminal: Работа с терминалом и Node.js</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            margin: 40px;
+            line-height: 1.7;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #4a90e2;
+            border-bottom: 2px solid #4a90e2;
+            padding-bottom: 6px;
+            margin-top: 40px;
+        }
+        p, pre {
+            margin-left: 20px;
+        }
+        pre {
+            background-color: #eef;
+            padding: 12px;
+            border-left: 4px solid #4a90e2;
+            overflow-x: auto;
+        }
+        ul {
+            margin-left: 50px;
+        }
+        code {
+            background-color: #f2f2f2;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JS_lesson_terminal: Терминал, Node.js и первый скрипт</h1>
+
+    <h2>1. Что такое терминал (CLI / Command Line Interface)</h2>
+    <p>Терминал — это окно, где ты можешь писать команды, а компьютер будет их выполнять. Это как "общение" с компьютером с помощью текста.</p>
+    <ul>
+        <li>CLI расшифровывается как <strong>Command Line Interface</strong></li>
+        <li>Ты можешь создавать, удалять, переименовывать файлы</li>
+        <li>Можешь запускать программы, скрипты, устанавливать пакеты</li>
+        <li>В Windows терминал — это <code>cmd</code> или <code>PowerShell</code></li>
+        <li>В Git Bash, macOS и Linux — это Bash-терминал</li>
+    </ul>
+
+    <h2>2. Что такое Node.js?</h2>
+    <p><strong>Node.js</strong> — это программа, которая позволяет запускать JavaScript-код <strong>вне браузера</strong>, прямо на компьютере, через терминал.</p>
+    <p>Обычно JavaScript работает в браузере, но Node позволяет работать с файлами, серверами и логикой прямо на компьютере.</p>
+
+    <h3>Как установить Node.js:</h3>
+    <ul>
+        <li>Перейди на <a href="https://nodejs.org">https://nodejs.org</a></li>
+        <li>Скачай версию LTS (Long Term Support)</li>
+        <li>Установи как обычную программу</li>
+        <li>Проверь установку в терминале:</li>
+    </ul>
+
+    <pre>
+node -v      // покажет версию Node.js
+npm -v       // покажет версию менеджера пакетов npm
+    </pre>
+
+    <h2>3. Что такое .js файл?</h2>
+    <p><code>.js</code> — это расширение для файлов JavaScript. Это обычный текстовый файл, в котором ты пишешь код.</p>
+
+    <p>Пример содержимого файла:</p>
+    <pre>
+console.log("Hello World!");
+    </pre>
+
+    <p>Файл должен быть сохранён с расширением <code>.js</code>, например:</p>
+    <ul>
+        <li><code>my_script.js</code></li>
+        <li><code>hello.js</code></li>
+    </ul>
+
+    <p>Ты можешь создать файл:</p>
+    <ul>
+        <li>В любом текстовом редакторе: VS Code, Notepad++, Sublime Text</li>
+        <li>Или через терминал: <code>touch my_script.js</code></li>
+    </ul>
+
+    <h2>4. Как запустить JavaScript-файл через Node.js</h2>
+    <p>После установки Node.js ты можешь запускать скрипты через терминал.</p>
+    <pre>
+node имя_файла.js
+    </pre>
+
+    <p>Пример:</p>
+    <pre>
+node my_first_script.js
+    </pre>
+
+    <p>Если внутри файла написано:</p>
+    <pre>
+console.log("Hello World!");
+    </pre>
+
+    <p>Ты увидишь в терминале:</p>
+    <pre>
+Hello World!
+    </pre>
+
+    <h2>5. ex00 — My First Script</h2>
+    <h3>Задача:</h3>
+    <p>Создай файл <code>my_first_script.js</code>, напиши в нём:</p>
+    <pre>
+console.log("Hello World!");
+    </pre>
+
+    <p>Сохрани файл. Запусти его через команду:</p>
+    <pre>
+node my_first_script.js
+    </pre>
+
+    <p>В результате ты увидишь сообщение в терминале. Поздравляю! Ты только что выполнил свой первый JS-скрипт вне браузера.</p>
+
+    <h2>6. Дополнительные темы</h2>
+    <ul>
+        <li><code>console.log()</code> — вывод текста или переменных</li>
+        <li><code>console.error()</code> — вывод ошибок</li>
+        <li><code>clear</code> — очистка терминала</li>
+        <li><code>ls</code> (или <code>dir</code>) — просмотр файлов в текущей папке</li>
+        <li><code>cd</code> — переход в другую папку</li>
+        <li><code>touch</code> или <code>echo</code> — создание файла из терминала</li>
+    </ul>
+
+    <h2>Итоги</h2>
+    <ul>
+        <li>Терминал — текстовая среда для управления файлами и программами</li>
+        <li>Node.js запускает JavaScript вне браузера</li>
+        <li><code>.js</code> — это JavaScript-файл</li>
+        <li><code>console.log()</code> — команда для вывода информации</li>
+        <li><code>node my_file.js</code> — команда запуска</li>
+    </ul>
+</body>
+</html>

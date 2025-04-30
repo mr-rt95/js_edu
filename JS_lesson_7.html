@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>JS_lesson_7: Возврат значений и перемещение элементов</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            margin: 40px;
+            line-height: 1.7;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #4a90e2;
+            border-bottom: 2px solid #4a90e2;
+            padding-bottom: 6px;
+            margin-top: 40px;
+        }
+        p, pre {
+            margin-left: 20px;
+        }
+        pre {
+            background-color: #eef;
+            padding: 12px;
+            border-left: 4px solid #4a90e2;
+            overflow-x: auto;
+        }
+        ul {
+            margin-left: 50px;
+        }
+        code {
+            background-color: #f2f2f2;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JS_lesson_7: Возврат значений и перемещение элементов</h1>
+
+    <h2>ex03 – Function With Return</h2>
+    <p>Функция может не только выполнять действия (например, печатать в консоль), но и <strong>возвращать значение</strong> наружу с помощью ключевого слова <code>return</code>.</p>
+
+    <h3>Пример:</h3>
+    <pre>
+function my_get_seven() {
+  return 7;
+}
+console.log(my_get_seven()); // выведет 7
+    </pre>
+
+    <p><strong>Что делает return:</strong></p>
+    <ul>
+        <li>Останавливает выполнение функции</li>
+        <li>Возвращает результат, который можно сохранить или использовать дальше</li>
+    </ul>
+
+    <h3>Пример с переменной:</h3>
+    <pre>
+function multiplyByTwo(x) {
+  return x * 2;
+}
+
+let result = multiplyByTwo(5); // result = 10
+console.log(result);
+    </pre>
+
+    <p>Такой подход удобен, когда результат нужно использовать в других частях программы.</p>
+
+    <h3>Вложенные вызовы:</h3>
+    <pre>
+console.log(multiplyByTwo(3)); // напрямую печатаем результат
+    </pre>
+
+    <h3>Функции без return:</h3>
+    <p>Если функция ничего не возвращает, она просто выполняет действие:</p>
+    <pre>
+function greet(name) {
+  console.log("Привет, " + name + "!");
+}
+    </pre>
+
+    <p>Такие функции называют "процедурными", они просто что-то делают.</p>
+
+    <h2>ex04 – My Moving Box</h2>
+    <p>В этой задаче мы работаем с <strong>DOM</strong> — это структура HTML-документа, которую можно менять с помощью JavaScript.</p>
+
+    <p>Каждый элемент на странице можно "поймать" по его <code>id</code>:</p>
+    <pre>
+let my_box = document.getElementById("my_box");
+    </pre>
+
+    <h3>Как изменить стили:</h3>
+    <p>У объекта <code>my_box</code> есть свойство <code>style</code>, через которое можно менять CSS:</p>
+    <pre>
+my_box.style.bottom = "0px";
+my_box.style.right = "0px";
+    </pre>
+
+    <p>Таким образом можно "переместить" элемент в нужную часть окна браузера.</p>
+
+    <h3>position: absolute</h3>
+    <p>Чтобы элемент можно было перемещать с помощью <code>top</code>, <code>left</code>, <code>right</code>, <code>bottom</code> — в CSS он должен иметь <code>position: absolute</code>:</p>
+    <pre>
+#my_box {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+    </pre>
+
+    <p>Теперь ты можешь перемещать элемент по экрану:</p>
+    <ul>
+        <li><code>my_box.style.top = "100px";</code></li>
+        <li><code>my_box.style.left = "50px";</code></li>
+        <li><code>my_box.style.bottom = "0px";</code></li>
+        <li><code>my_box.style.right = "0px";</code></li>
+    </ul>
+
+    <h3>Пример перемещения:</h3>
+    <pre>
+&lt;div id="my_box" style="position:absolute; width:100px; height:100px; background:red;"&gt;&lt;/div&gt;
+&lt;button onclick="moveBox()"&gt;Переместить&lt;/button&gt;
+
+&lt;script&gt;
+function moveBox() {
+  let my_box = document.getElementById("my_box");
+  my_box.style.bottom = "0px";
+  my_box.style.right = "0px";
+}
+&lt;/script&gt;
+    </pre>
+
+    <h2>Итоги</h2>
+    <ul>
+        <li><code>return</code> — возвращает значение из функции</li>
+        <li>Функции с return можно использовать как "вычисления"</li>
+        <li>DOM — объектная модель HTML-страницы</li>
+        <li><code>getElementById()</code> — позволяет найти элемент по id</li>
+        <li><code>.style</code> — позволяет менять внешний вид (цвет, положение)</li>
+        <li><code>position: absolute</code> — даёт возможность перемещать элемент по координатам</li>
+    </ul>
+</body>
+</html>

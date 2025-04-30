@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>JS_lesson_12: Модуль числа — функция abs</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            margin: 40px;
+            line-height: 1.7;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #4a90e2;
+            border-bottom: 2px solid #4a90e2;
+            padding-bottom: 6px;
+            margin-top: 40px;
+        }
+        p, pre {
+            margin-left: 20px;
+        }
+        pre {
+            background-color: #eef;
+            padding: 12px;
+            border-left: 4px solid #4a90e2;
+            overflow-x: auto;
+        }
+        ul {
+            margin-left: 50px;
+        }
+        code {
+            background-color: #f2f2f2;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JS_lesson_12: Модуль числа (функция abs)</h1>
+
+    <h2>Что такое модуль числа?</h2>
+    <p>Модуль числа — это расстояние до нуля. Всегда положительное значение.</p>
+
+    <ul>
+        <li><code>abs(-5)</code> → <code>5</code></li>
+        <li><code>abs(7)</code> → <code>7</code></li>
+        <li><code>abs(0)</code> → <code>0</code></li>
+    </ul>
+
+    <h2>Готовая функция: Math.abs()</h2>
+    <p>В JavaScript есть встроенная функция <code>Math.abs()</code>, которая возвращает модуль числа:</p>
+    <pre>
+console.log(Math.abs(-3)); // 3
+console.log(Math.abs(5));  // 5
+    </pre>
+
+    <p>Но в этом задании нужно <strong>самому реализовать</strong> такую функцию без использования Math.abs.</p>
+
+    <h2>Как вручную вычислить модуль?</h2>
+    <p>Простая логика:</p>
+    <ul>
+        <li>Если число < 0 → вернуть -число</li>
+        <li>Иначе → вернуть как есть</li>
+    </ul>
+
+    <h3>Пример:</h3>
+    <pre>
+function my_abs(n) {
+  if (n < 0) {
+    return -n;
+  } else {
+    return n;
+  }
+}
+    </pre>
+
+    <h3>Тесты:</h3>
+    <pre>
+console.log(my_abs(-8)); // 8
+console.log(my_abs(4));  // 4
+console.log(my_abs(0));  // 0
+    </pre>
+
+    <h2>Что такое тернарный оператор?</h2>
+    <p>Это короткая форма <code>if / else</code>:</p>
+    <pre>
+условие ? значение_если_true : значение_если_false;
+    </pre>
+
+    <p>Та же функция с тернарным оператором:</p>
+    <pre>
+function my_abs(n) {
+  return n < 0 ? -n : n;
+}
+    </pre>
+
+    <p>Это означает: если n меньше нуля — вернуть -n, иначе — вернуть n.</p>
+
+    <h2>Арифметические операции</h2>
+    <p>Чтобы изменить знак числа, мы просто умножаем его на -1:</p>
+    <pre>
+let x = -10;
+console.log(-x); // 10
+    </pre>
+
+    <h2>Сравнение чисел</h2>
+    <ul>
+        <li><code>&lt;</code> — меньше</li>
+        <li><code>&gt;</code> — больше</li>
+        <li><code>==</code> — равно</li>
+        <li><code>!==</code> — не равно</li>
+    </ul>
+
+    <h2>Итоги</h2>
+    <ul>
+        <li>Модуль всегда положительный</li>
+        <li>Можно использовать <code>if / else</code> или <code>тернарный оператор</code></li>
+        <li>Нельзя использовать <code>Math.abs()</code> в этом задании</li>
+        <li><code>return</code> — возвращает значение из функции</li>
+        <li>Числа сравниваются с помощью <code>&lt;</code> и других операторов</li>
+    </ul>
+</body>
+</html>

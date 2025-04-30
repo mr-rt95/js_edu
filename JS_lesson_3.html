@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>JS_lesson_3: Переменные, строки, инкремент</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fefefe;
+            color: #333;
+            margin: 40px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #4a90e2;
+            border-bottom: 2px solid #4a90e2;
+            padding-bottom: 6px;
+            margin-top: 30px;
+        }
+        p, pre {
+            margin-left: 20px;
+        }
+        pre {
+            background-color: #eef;
+            padding: 10px;
+            border-left: 4px solid #4a90e2;
+            overflow-x: auto;
+        }
+        ul {
+            margin-left: 40px;
+        }
+        code {
+            background-color: #f2f2f2;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JS_lesson_3: Переменные, строки, инкремент и декремент</h1>
+
+    <h2>ex00 – Variable Char</h2>
+    <p>Переменная — это "коробка" с именем, где можно хранить информацию.</p>
+    <p><strong>Character</strong> — это одиночный символ, например: <code>'a'</code>, <code>'Z'</code>, <code>'%'</code>.</p>
+    <p>Создание переменной типа char:</p>
+    <pre>let letter = 'c';</pre>
+
+    <h2>ex01 – Variable String</h2>
+    <p><strong>String</strong> — это строка, то есть текст из символов.</p>
+    <p>Примеры строк:</p>
+    <pre>
+let name = "Elmar";
+let sentence = 'Learning is growing';
+    </pre>
+    <p>Можно использовать как одинарные, так и двойные кавычки. Но открывающая и закрывающая кавычка должны быть одинаковыми.</p>
+
+    <h2>ex02 – Multiple Variable Type</h2>
+    <p>Можно создать переменные разных типов:</p>
+    <ul>
+        <li><code>let age = 34;</code> — целое число</li>
+        <li><code>let my_name = 'Luke';</code> — символы (строка)</li>
+        <li><code>let my_comma = ',';</code> — одиночный символ</li>
+    </ul>
+    <p>Объединять строки можно через <code>+</code>:</p>
+    <pre>
+console.log('Hello ' + my_name + my_comma + " I'm " + age + ' years old.');
+    </pre>
+
+    <h2>ex03 – First Incrementation</h2>
+    <p><strong>Инкремент</strong> (<code>++</code>) — увеличивает число на 1.</p>
+    <p><strong>Декремент</strong> (<code>--</code>) — уменьшает число на 1.</p>
+    <pre>
+let my_index = 0;
+my_index++; // теперь 1
+my_index--; // теперь снова 0
+    </pre>
+    
+    <h3>Другие формы увеличения и уменьшения:</h3>
+    <ul>
+        <li><code>x += 2;</code> — прибавить 2 (увеличение на 2)</li>
+        <li><code>x -= 3;</code> — вычесть 3 (уменьшение на 3)</li>
+        <li><code>x *= 5;</code> — умножить на 5</li>
+        <li><code>x /= 2;</code> — разделить на 2</li>
+    </ul>
+    <p>Пример:</p>
+    <pre>
+let x = 10;
+x += 5; // x = 15
+x *= 2; // x = 30
+x--;    // x = 29
+    </pre>
+
+    <h2>Итоги</h2>
+    <ul>
+        <li><strong>char</strong> — символ, например 'a'</li>
+        <li><strong>string</strong> — строка, например "Привет"</li>
+        <li><strong>+</strong> — объединение строк</li>
+        <li><strong>++</strong> и <strong>--</strong> — изменение значения на 1</li>
+        <li><strong>+=</strong>, <strong>-=</strong>, <strong>*=</strong>, <strong>/=</strong> — короткие формы операций</li>
+    </ul>
+</body>
+</html>

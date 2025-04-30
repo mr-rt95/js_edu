@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>JS_lesson_11: Проверка отрицательного числа</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            margin: 40px;
+            line-height: 1.7;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #4a90e2;
+            border-bottom: 2px solid #4a90e2;
+            padding-bottom: 6px;
+            margin-top: 40px;
+        }
+        p, pre {
+            margin-left: 20px;
+        }
+        pre {
+            background-color: #eef;
+            padding: 12px;
+            border-left: 4px solid #4a90e2;
+            overflow-x: auto;
+        }
+        ul {
+            margin-left: 50px;
+        }
+        code {
+            background-color: #f2f2f2;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JS_lesson_11: Проверка, является ли число отрицательным</h1>
+
+    <h2>Что такое функция?</h2>
+    <p>Функция — это блок кода, который можно выполнить несколько раз с разными значениями. Она помогает структурировать программу и избежать повторения.</p>
+
+    <pre>
+function имя(параметр) {
+  // действия
+}
+    </pre>
+
+    <p>Пример:</p>
+    <pre>
+function sayHello(name) {
+  console.log("Hello, " + name);
+}
+sayHello("Elmar"); // вывод: Hello, Elmar
+    </pre>
+
+    <h2>Как передавать параметры?</h2>
+    <p>Параметры — это переменные, значения которых передаются функции при её вызове. Они делают функции гибкими.</p>
+
+    <pre>
+function double(x) {
+  return x * 2;
+}
+console.log(double(4)); // 8
+    </pre>
+
+    <h2>Что такое отрицательные числа?</h2>
+    <p>Число меньше нуля считается <strong>отрицательным</strong>. Например: -1, -5, -100. Ноль и положительные — это 0 и выше.</p>
+
+    <h3>Примеры:</h3>
+    <pre>
+-1, -10, -3 — отрицательные
+0, 1, 2 — не отрицательные
+    </pre>
+
+    <h2>Операторы сравнения:</h2>
+    <ul>
+        <li><code>&lt;</code> — меньше</li>
+        <li><code>&gt;</code> — больше</li>
+        <li><code>&lt;=</code> — меньше или равно</li>
+        <li><code>&gt;=</code> — больше или равно</li>
+        <li><code>==</code> — равно</li>
+        <li><code>!=</code> — не равно</li>
+    </ul>
+
+    <h2>Как использовать if/else:</h2>
+    <pre>
+if (условие) {
+  // выполняется, если условие истинно (true)
+} else {
+  // выполняется, если условие ложно (false)
+}
+    </pre>
+
+    <p>Пример:</p>
+    <pre>
+let number = -3;
+
+if (number < 0) {
+  console.log("Число отрицательное");
+} else {
+  console.log("Число неотрицательное");
+}
+    </pre>
+
+    <h2>Как использовать return</h2>
+    <p>Ключевое слово <code>return</code> завершает выполнение функции и возвращает результат наружу.</p>
+
+    <pre>
+function my_is_negative(n) {
+  if (n < 0) {
+    return 0;
+  } else {
+    return 1;
+  }
+}
+    </pre>
+
+    <h3>Примеры вызова функции:</h3>
+    <pre>
+console.log(my_is_negative(-5)); // 0
+console.log(my_is_negative(0));  // 1
+console.log(my_is_negative(10)); // 1
+    </pre>
+
+    <h2>Итоги</h2>
+    <ul>
+        <li>Функция выполняет действия и может возвращать результат</li>
+        <li><code>if/else</code> проверяет условия</li>
+        <li><code>return</code> завершает функцию и отдаёт значение</li>
+        <li>Отрицательные числа — это любые числа меньше нуля</li>
+        <li><code>&lt;</code>, <code>&gt;</code> и другие сравнения нужны для проверки</li>
+    </ul>
+</body>
+</html>

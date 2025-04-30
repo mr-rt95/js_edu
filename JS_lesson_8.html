@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>JS_lesson_8: Переменные, типы и множественные условия</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            margin: 40px;
+            line-height: 1.7;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #4a90e2;
+            border-bottom: 2px solid #4a90e2;
+            padding-bottom: 6px;
+            margin-top: 40px;
+        }
+        p, pre {
+            margin-left: 20px;
+        }
+        pre {
+            background-color: #eef;
+            padding: 12px;
+            border-left: 4px solid #4a90e2;
+            overflow-x: auto;
+        }
+        ul {
+            margin-left: 50px;
+        }
+        code {
+            background-color: #f2f2f2;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JS_lesson_8: Переменные, типы и множественные условия</h1>
+
+    <h2>ex01 — Multiple Variables Multiple Type</h2>
+    <p>Переменная — это именованная ячейка, в которой можно хранить данные: текст, числа и многое другое. В JavaScript переменные создаются с помощью <code>let</code> или <code>const</code>.</p>
+
+    <h3>Типы данных:</h3>
+    <ul>
+        <li><code>let age = 34;</code> — число (integer)</li>
+        <li><code>let name = "Luke";</code> — строка (string)</li>
+        <li><code>let comma = ',';</code> — символ, который в JavaScript считается строкой</li>
+    </ul>
+
+    <p>Тип <code>char</code> как в других языках (C, Java) в JS отсутствует. Один символ — это тоже строка длиной 1.</p>
+
+    <h3>Конкатенация — объединение строк:</h3>
+    <pre>
+let name = "Luke";
+let age = 34;
+let comma = ',';
+
+console.log("Hello " + name + comma + " I'm " + age + " years old.");
+    </pre>
+
+    <p>Это объединит все части в одну строку и выведет:</p>
+    <pre>
+Hello Luke, I'm 34 years old.
+    </pre>
+
+    <h3>Одинарные и двойные кавычки:</h3>
+    <ul>
+        <li>Можно использовать оба варианта: <code>'текст'</code> или <code>"текст"</code></li>
+        <li>Важно: открывающая и закрывающая кавычки должны быть одинаковыми</li>
+        <li>Лучше придерживаться одного стиля во всём проекте</li>
+    </ul>
+
+    <h3>Почему лучше использовать <code>let</code> или <code>const</code>?</h3>
+    <ul>
+        <li>Если не использовать — переменная попадёт в глобальную область, что плохо для больших программ</li>
+        <li><code>let</code> позволяет изменить значение</li>
+        <li><code>const</code> — переменная, значение которой не меняется</li>
+    </ul>
+
+    <h2>ex02 — First If Multiple Conditions</h2>
+    <p>Условия позволяют выполнять действия, только если соблюдается определённое правило. Сложные условия — это когда нужно проверить несколько правил одновременно.</p>
+
+    <h3>Операторы сравнения:</h3>
+    <ul>
+        <li><code>></code> — больше</li>
+        <li><code><</code> — меньше</li>
+        <li><code>==</code> — равно по значению</li>
+        <li><code>===</code> — строгое равенство (тип + значение)</li>
+    </ul>
+
+    <h3>Логические операторы:</h3>
+    <ul>
+        <li><code>&&</code> — логическое "И": все условия должны быть верны</li>
+        <li><code>||</code> — логическое "ИЛИ": хотя бы одно условие должно быть верным</li>
+        <li><code>!</code> — логическое "НЕ": инвертирует значение</li>
+    </ul>
+
+    <h3>Пример сложного условия:</h3>
+    <pre>
+let a = 10, b = 9, c = 11, d = 10;
+
+if (a > b && a < c && a == d) {
+  console.log("a is between b and c and equal to d");
+}
+    </pre>
+
+    <h3>Пример с <code>||</code>:</h3>
+    <pre>
+let a = 10, y = 9, z = 11;
+
+if (z > a || y > a) {
+  console.log("z OR y is greater than a");
+}
+    </pre>
+
+    <h3>Вложенные условия (if внутри if):</h3>
+    <pre>
+let score = 85;
+
+if (score > 50) {
+  if (score >= 80) {
+    console.log("Отлично!");
+  } else {
+    console.log("Хорошо");
+  }
+} else {
+  console.log("Попробуй ещё раз");
+}
+    </pre>
+
+    <p>Это пример вложенной логики: сначала проверяется одно, а затем другое.</p>
+
+    <h3>Важность скобок:</h3>
+    <p>Чтобы не запутаться в сложных условиях, всегда используй скобки для группировки:</p>
+    <pre>
+if ((a > b && a < c) || d === a) {
+  console.log("Сложное условие");
+}
+    </pre>
+
+    <h2>Итоги</h2>
+    <ul>
+        <li>Объявляй переменные с <code>let</code> или <code>const</code></li>
+        <li>Используй логичные имена переменных</li>
+        <li>Объединяй строки с помощью <code>+</code></li>
+        <li>Проверяй условия с <code>if</code>, <code>else</code>, <code>&&</code>, <code>||</code></li>
+        <li>Следи за правильным использованием скобок</li>
+        <li>Понимай разницу между <code>==</code> и <code>===</code></li>
+    </ul>
+</body>
+</html>

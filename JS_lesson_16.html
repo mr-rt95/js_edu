@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>JS_lesson_16: Основы работы со строками</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            margin: 40px;
+            line-height: 1.7;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #4a90e2;
+            border-bottom: 2px solid #4a90e2;
+            padding-bottom: 6px;
+            margin-top: 40px;
+        }
+        p, pre {
+            margin-left: 20px;
+        }
+        pre {
+            background-color: #eef;
+            padding: 12px;
+            border-left: 4px solid #4a90e2;
+            overflow-x: auto;
+        }
+        ul {
+            margin-left: 50px;
+        }
+        code {
+            background-color: #f2f2f2;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JS_lesson_16: Основы строк в JavaScript (подготовка к Quest06)</h1>
+
+    <h2>Что такое строка (string)?</h2>
+    <p>Строка — это текст. В JavaScript строка — это последовательность символов, заключённых в кавычки.</p>
+
+    <ul>
+        <li><code>'одинарные кавычки'</code></li>
+        <li><code>"двойные кавычки"</code></li>
+        <li><code>`обратные кавычки`</code> (для шаблонных строк)</li>
+    </ul>
+
+    <h3>Примеры:</h3>
+    <pre>
+let s1 = 'hello';
+let s2 = "world";
+let s3 = `template`;
+    </pre>
+
+    <h2>Как обращаться к символам строки?</h2>
+    <p>Каждый символ в строке имеет индекс (позицию), начиная с 0:</p>
+    <pre>
+let word = "JavaScript";
+console.log(word[0]); // J
+console.log(word[4]); // S
+console.log(word.charAt(2)); // v
+    </pre>
+
+    <h2>Как узнать длину строки?</h2>
+    <p>Свойство <code>.length</code> возвращает количество символов в строке:</p>
+    <pre>
+let name = "Elmar";
+console.log(name.length); // 5
+    </pre>
+
+    <h2>Как перебирать строку по символам?</h2>
+
+    <h3>Цикл for:</h3>
+    <pre>
+let text = "code";
+for (let i = 0; i < text.length; i++) {
+  console.log(text[i]);
+}
+    </pre>
+
+    <h3>Цикл while:</h3>
+    <pre>
+let i = 0;
+while (i < text.length) {
+  console.log(text[i]);
+  i++;
+}
+    </pre>
+
+    <h2>Как сравнивать символы?</h2>
+    <p>Можно использовать условие <code>if</code> и оператор сравнения <code>===</code>:</p>
+    <pre>
+let msg = "banana";
+for (let i = 0; i < msg.length; i++) {
+  if (msg[i] === 'a') {
+    console.log("Найдена буква a на позиции " + i);
+  }
+}
+    </pre>
+
+    <h2>Разница между символом и строкой</h2>
+    <p>В JavaScript символ — это строка длиной 1.</p>
+    <ul>
+        <li><code>'a'</code> — строка из одного символа</li>
+        <li><code>"abc"</code> — строка из трёх символов</li>
+    </ul>
+
+    <p>Они оба являются строками:</p>
+    <pre>
+console.log(typeof 'a');     // string
+console.log(typeof "hello"); // string
+    </pre>
+
+    <h2>Дополнительно: строка как массив символов</h2>
+    <p>Ты можешь думать о строке как об массиве символов. Она индексируется так же, как массив.</p>
+    <pre>
+let lang = "js";
+console.log(lang[1]); // s
+    </pre>
+
+    <h2>Итоги</h2>
+    <ul>
+        <li>Строка — это текст, заключённый в кавычки</li>
+        <li>Индексация начинается с 0</li>
+        <li>Свойство <code>.length</code> показывает длину строки</li>
+        <li>Циклы помогают проходиться по каждому символу</li>
+        <li><code>if (str[i] === 'a')</code> — проверка символов</li>
+        <li>Строка может быть длиной 1 или более</li>
+    </ul>
+</body>
+</html>

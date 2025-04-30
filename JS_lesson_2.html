@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>JS_lesson_2: Debugging и console.log</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9fc;
+            color: #333;
+            margin: 40px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #4a90e2;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #4a90e2;
+            padding-bottom: 6px;
+            margin-top: 30px;
+        }
+        p, pre {
+            margin-left: 20px;
+        }
+        pre {
+            background-color: #eef;
+            padding: 10px;
+            border-left: 4px solid #4a90e2;
+            overflow-x: auto;
+        }
+        ul {
+            margin-left: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JS_lesson_2: Debugging и console.log</h1>
+
+    <h2>1. Что такое отладка (debugging)?</h2>
+    <p>Отладка — это поиск и исправление ошибок в коде. <strong>console.log()</strong> помогает видеть, что происходит внутри программы.</p>
+
+    <h2>2. Что такое <code>console.log()</code>?</h2>
+    <p>Это команда, которая показывает сообщения в консоли браузера. Она используется для:</p>
+    <ul>
+        <li>Проверки значений</li>
+        <li>Понимания хода работы кода</li>
+        <li>Поиска ошибок</li>
+    </ul>
+    <pre>console.log("My first print");</pre>
+
+    <h2>3. Пример HTML-файла</h2>
+    <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;ex04 – Debugging&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Открой консоль, чтобы увидеть сообщение!&lt;/h1&gt;
+    &lt;script&gt;
+      console.log("My first print");
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+
+    <h2>4. Как открыть консоль в браузере?</h2>
+    <ul>
+        <li>Открой HTML-файл в браузере</li>
+        <li>Нажми клавишу <strong>F12</strong></li>
+        <li>Перейди во вкладку <strong>Console</strong></li>
+        <li>Увидишь сообщение: <code>My first print</code></li>
+    </ul>
+
+    <h2>5. Что можно выводить с помощью <code>console.log()</code>?</h2>
+    <p>Можно выводить текст, числа, переменные и вычисления:</p>
+    <pre>
+console.log("Привет");
+let age = 20;
+console.log(age);
+console.log("Возраст: " + age);
+console.log(5 + 3); // 8
+    </pre>
+
+    <h2>6. Зачем это нужно?</h2>
+    <p>Без <code>console.log()</code> ты не знаешь, что происходит в программе. Он — твой помощник и "глаза" внутри кода.</p>
+
+    <h2>7. Заключение</h2>
+    <ul>
+        <li><strong>console.log()</strong> — выводит сообщения в консоль</li>
+        <li>Помогает видеть, как работает код</li>
+        <li>Очень полезен при обучении и поиске ошибок</li>
+        <li>Открывай консоль через <strong>F12 → Console</strong></li>
+    </ul>
+</body>
+</html>

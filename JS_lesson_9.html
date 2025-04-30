@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>JS_lesson_9: Первая функция в JavaScript</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            margin: 40px;
+            line-height: 1.7;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #4a90e2;
+            border-bottom: 2px solid #4a90e2;
+            padding-bottom: 6px;
+            margin-top: 40px;
+        }
+        p, pre {
+            margin-left: 20px;
+        }
+        pre {
+            background-color: #eef;
+            padding: 12px;
+            border-left: 4px solid #4a90e2;
+            overflow-x: auto;
+        }
+        ul {
+            margin-left: 50px;
+        }
+        code {
+            background-color: #f2f2f2;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JS_lesson_9: Первая функция в JavaScript</h1>
+
+    <h2>Что такое функция?</h2>
+    <p>Функция — это <strong>блок кода</strong>, который можно <strong>выполнить несколько раз</strong>. Она помогает не повторять одно и то же, делает код компактным и читаемым.</p>
+
+    <p>Функции можно сравнить с "мини-программами внутри программы".</p>
+
+    <h3>Как объявить функцию:</h3>
+    <pre>
+function имя_функции() {
+  // тело функции — действия, которые нужно выполнить
+}
+    </pre>
+
+    <h3>Как вызвать функцию:</h3>
+    <pre>
+имя_функции(); // запуск функции
+    </pre>
+
+    <h3>Пример:</h3>
+    <pre>
+function printMessage() {
+  console.log("Hello from function!");
+}
+
+printMessage(); // выведет текст
+    </pre>
+
+    <h2>Где использовать функции</h2>
+    <p>Функции — это основа любой программы. Они:</p>
+    <ul>
+        <li>Позволяют <strong>повторно использовать код</strong></li>
+        <li><strong>Разделяют программу</strong> на логические блоки</li>
+        <li>Делают код <strong>читаемым и понятным</strong></li>
+    </ul>
+
+    <p>Каждая функция должна выполнять <strong>одну задачу</strong>. Например:</p>
+    <ul>
+        <li><code>printGreeting()</code> — вывод приветствия</li>
+        <li><code>calculateAge()</code> — подсчёт возраста</li>
+        <li><code>logError()</code> — логирование ошибок</li>
+    </ul>
+
+    <h2>Лучшие практики:</h2>
+    <ul>
+        <li><strong>Названия функций</strong> — пиши понятно: <code>printMessage</code>, а не <code>x</code></li>
+        <li><strong>Отступы</strong> — используй отступы для читаемости кода</li>
+        <li><strong>Комментарии</strong> — поясняй, что делает код</li>
+    </ul>
+
+    <pre>
+// Эта функция печатает приветствие
+function printGreeting() {
+  console.log("Добро пожаловать!");
+}
+    </pre>
+
+    <h2>Что важно знать дополнительно</h2>
+
+    <h3>let и const:</h3>
+    <p>Всегда объявляй переменные с <code>let</code> или <code>const</code>, например:</p>
+    <pre>
+let name = "Elmar";
+const PI = 3.14;
+    </pre>
+
+    <h3>Комментарии:</h3>
+    <p>Комментарии помогают понимать код. Они не влияют на выполнение.</p>
+    <pre>
+// Это однострочный комментарий
+
+/*
+  Это многострочный комментарий
+  удобно для пояснений
+*/
+    </pre>
+
+    <h3>console.log:</h3>
+    <p>Выводит текст в терминал или консоль браузера. Полезно для отладки:</p>
+    <pre>
+console.log("Значение переменной:", name);
+    </pre>
+
+    <h3>Ошибки и отладка:</h3>
+    <p>Ошибки часто происходят из-за:</p>
+    <ul>
+        <li>Отсутствующих скобок <code>{ }</code> или круглых скобок <code>()</code></li>
+        <li>Забытых точек с запятой <code>;</code> (не обязательно, но желательно)</li>
+        <li>Опечаток в названиях</li>
+    </ul>
+
+    <h3>Работа в терминале:</h3>
+    <ul>
+        <li>Файл должен быть сохранён как <code>.js</code></li>
+        <li>Запуск через терминал: <code>node имя_файла.js</code></li>
+    </ul>
+
+    <h2>Пример целиком:</h2>
+    <pre>
+function myFirstFunction() {
+  console.log("Hello from my first function!");
+}
+
+myFirstFunction();
+    </pre>
+
+    <h2>Итоги</h2>
+    <ul>
+        <li>Функция — это способ переиспользовать код</li>
+        <li>Создаётся через <code>function</code>, вызывается по имени</li>
+        <li>Хорошее имя и структура — залог читаемого кода</li>
+        <li><code>console.log()</code> — помогает видеть, что происходит</li>
+        <li>Пиши чистый, аккуратный код — с отступами и комментариями</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Дополнение к Js_lesson_7: Анонимные и стрелочные функции</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f9;
+      color: #2c3e50;
+      line-height: 1.8;
+      padding: 40px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h1, h2 {
+      color: #1a5276;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    code {
+      background-color: #ecf0f1;
+      padding: 2px 5px;
+      border-radius: 3px;
+      font-family: Consolas, monospace;
+    }
+
+    pre {
+      background-color: #2d3436;
+      color: #dfe6e9;
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background-color: #fff;
+    }
+
+    th, td {
+      padding: 12px;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+
+    th {
+      background-color: #2980b9;
+      color: white;
+    }
+
+    .note {
+      background-color: #d5f5e3;
+      border-left: 6px solid #27ae60;
+      padding: 15px;
+      margin: 20px 0;
+      font-style: italic;
+    }
+
+    ul {
+      margin-top: 10px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Дополнение к Js_lesson_7<br>Анонимные и стрелочные функции в JavaScript</h1>
+
+  <div class="section">
+    <h2>🔹 Что такое анонимные функции?</h2>
+    <p>
+      Анонимная функция — это функция <strong>без имени</strong>. Такие функции часто передаются как аргументы в другие функции или сохраняются в переменные. Пример:
+    </p>
+    <pre><code>const sayHi = function() {
+  console.log("Привет!");
+};</code></pre>
+    <p>
+      Здесь функция не имеет имени и присваивается переменной <code>sayHi</code>.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>🔹 Что такое стрелочные функции?</h2>
+    <p>
+      Стрелочные функции (arrow functions) — это современный способ записи функций, появившийся в стандарте ES6. Они выглядят компактно и особенно удобны в коротких функциях и колбэках:
+    </p>
+    <pre><code>const sayHi = () => {
+  console.log("Привет!");
+};</code></pre>
+    <p>
+      Стрелочная функция отличается тем, что <strong>не имеет собственного <code>this</code></strong> и <strong>не поддерживает <code>arguments</code></strong>.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>📌 Основные отличия между function и стрелочной функцией</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Особенность</th>
+          <th>Обычная функция (function)</th>
+          <th>Стрелочная функция (=>)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Собственное <code>this</code></td>
+          <td>✅ Есть</td>
+          <td>❌ Нет</td>
+        </tr>
+        <tr>
+          <td>Поддержка <code>arguments</code></td>
+          <td>✅ Да</td>
+          <td>❌ Нет</td>
+        </tr>
+        <tr>
+          <td>Можно вызвать с <code>new</code></td>
+          <td>✅ Да (конструктор)</td>
+          <td>❌ Нет</td>
+        </tr>
+        <tr>
+          <td>Подходит для методов объектов</td>
+          <td>✅ Да</td>
+          <td>⚠️ С осторожностью</td>
+        </tr>
+        <tr>
+          <td>Краткость записи</td>
+          <td>❌ Много кода</td>
+          <td>✅ Да</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>🔍 Пример с <code>this</code> в объекте</h2>
+    <pre><code>const user = {
+  name: "Анна",
+  sayHi: function() {
+    console.log("Привет, " + this.name);
+  }
+};
+user.sayHi(); // Привет, Анна</code></pre>
+
+    <pre><code>const user = {
+  name: "Анна",
+  sayHi: () => {
+    console.log("Привет, " + this.name);
+  }
+};
+user.sayHi(); // Привет, undefined ❌</code></pre>
+
+    <div class="note">
+      Стрелочная функция не создаёт своего <code>this</code>, поэтому <code>this.name</code> не указывает на объект <code>user</code>.
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>✅ Когда использовать какую функцию?</h2>
+    <ul>
+      <li><strong>Обычную функцию (function):</strong> использовать для методов объектов, конструкций с <code>this</code> или <code>arguments</code>.</li>
+      <li><strong>Стрелочную функцию (=>):</strong> использовать для коротких выражений, колбэков, замыканий, особенно если нужно сохранить внешний <code>this</code>.</li>
+    </ul>
+    <pre><code>setTimeout(() => {
+  console.log("Задержка 1 секунда");
+}, 1000);</code></pre>
+  </div>
+
+  <div class="section">
+    <h2>📚 Вывод</h2>
+    <p>
+      Стрелочные функции — это удобный синтаксис для коротких операций и функционального программирования. Однако важно понимать их особенности: отсутствие собственного <code>this</code> и невозможность использования как конструктора.
+    </p>
+    <p>
+      Всегда выбирай тип функции в зависимости от задачи: если нужно работать с контекстом — используй <code>function</code>, если нужна краткость и внешний <code>this</code> — <code>=&gt;</code>.
+    </p>
+  </div>
+
+</body>
+</html>

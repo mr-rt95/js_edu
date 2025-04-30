@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>JS_lesson_10: Аргументы командной строки и массивы</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            margin: 40px;
+            line-height: 1.7;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #4a90e2;
+            border-bottom: 2px solid #4a90e2;
+            padding-bottom: 6px;
+            margin-top: 40px;
+        }
+        p, pre {
+            margin-left: 20px;
+        }
+        pre {
+            background-color: #eef;
+            padding: 12px;
+            border-left: 4px solid #4a90e2;
+            overflow-x: auto;
+        }
+        ul {
+            margin-left: 50px;
+        }
+        code {
+            background-color: #f2f2f2;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JS_lesson_10: Аргументы командной строки, process.argv и массивы</h1>
+
+    <h2>Что такое командная строка (терминал)?</h2>
+    <p>Терминал — это инструмент, позволяющий общаться с компьютером через команды. Ты можешь запускать программы, переходить по папкам, выполнять скрипты.</p>
+    <ul>
+        <li>В Windows: <code>cmd</code>, <code>PowerShell</code>, <code>Git Bash</code></li>
+        <li>На Mac и Linux: <code>Terminal</code></li>
+    </ul>
+    <p>Для JavaScript используется команда:</p>
+    <pre>node имя_файла.js</pre>
+
+    <h2>Что такое process.argv?</h2>
+    <p>В Node.js переменная <code>process.argv</code> — это массив, в котором хранятся все аргументы, переданные скрипту при запуске.</p>
+
+    <p>Пример запуска в терминале:</p>
+    <pre>node my_script.js hello world 123</pre>
+
+    <p>Тогда <code>process.argv</code> будет содержать:</p>
+    <pre>
+[
+  '/путь/к/node',
+  '/путь/к/my_script.js',
+  'hello',
+  'world',
+  '123'
+]
+    </pre>
+
+    <p>Аргументы начинаются с <strong>индекса 2</strong>, потому что:</p>
+    <ul>
+        <li><code>argv[0]</code> — путь к Node</li>
+        <li><code>argv[1]</code> — путь к скрипту</li>
+        <li><code>argv[2]</code> и далее — настоящие аргументы</li>
+    </ul>
+
+    <h2>Как работает массив?</h2>
+    <p>Массив — это список элементов. В JavaScript он выглядит так:</p>
+    <pre>
+let fruits = ["apple", "banana", "pear"];
+console.log(fruits[0]); // apple
+console.log(fruits.length); // 3
+    </pre>
+
+    <p>Массивы индексируются с нуля: первый элемент — это <code>[0]</code>.</p>
+
+    <h2>Как перебрать массив с помощью <code>for</code></h2>
+    <p>Часто нужно пройтись по массиву и выполнить действия с каждым элементом. Это делается с помощью цикла:</p>
+    <pre>
+let args = process.argv;
+
+for (let i = 2; i < args.length; i++) {
+  console.log(args[i]);
+}
+    </pre>
+
+    <p>Этот цикл начнёт с третьего элемента и выведет все аргументы, переданные скрипту.</p>
+
+    <h2>Полный пример — ex00: My First Script With Args</h2>
+    <pre>
+// файл: my_first_script_with_args.js
+
+let args = process.argv;
+
+for (let i = 2; i < args.length; i++) {
+  console.log(args[i]);
+}
+    </pre>
+
+    <p>Запуск в терминале:</p>
+    <pre>node my_first_script_with_args.js apple banana kiwi</pre>
+
+    <p>Вывод:</p>
+    <pre>
+apple
+banana
+kiwi
+    </pre>
+
+    <h2>Дополнительные темы и полезные советы</h2>
+
+    <h3>Переменные:</h3>
+    <ul>
+        <li>Объявляй через <code>let</code> или <code>const</code></li>
+        <li><code>let a = 5;</code>, <code>const name = "Elmar";</code></li>
+    </ul>
+
+    <h3>console.log():</h3>
+    <p>Выводит данные в терминал. Ты можешь комбинировать текст и переменные:</p>
+    <pre>
+let city = "Baku";
+console.log("I live in " + city);
+    </pre>
+
+    <h3>Отладка:</h3>
+    <ul>
+        <li>Проверяй, какие аргументы пришли: <code>console.log(process.argv);</code></li>
+        <li>Следи за ошибками: скобки, синтаксис, пробелы</li>
+        <li>Убедись, что в цикле <code>i</code> начинается с 2</li>
+    </ul>
+
+    <h2>Итоги</h2>
+    <ul>
+        <li><code>process.argv</code> — массив аргументов командной строки</li>
+        <li>Массив начинается с 0, аргументы с 2</li>
+        <li><code>for</code> — позволяет перебрать все аргументы</li>
+        <li><code>console.log()</code> — выводит результат в терминал</li>
+        <li>Пиши чистый, читаемый код с <code>let</code> и отступами</li>
+    </ul>
+</body>
+</html>

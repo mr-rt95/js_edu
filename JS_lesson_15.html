@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>JS_lesson_15: Форматирование строк в JavaScript</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            margin: 40px;
+            line-height: 1.7;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #4a90e2;
+            border-bottom: 2px solid #4a90e2;
+            padding-bottom: 6px;
+            margin-top: 40px;
+        }
+        p, pre {
+            margin-left: 20px;
+        }
+        pre {
+            background-color: #eef;
+            padding: 12px;
+            border-left: 4px solid #4a90e2;
+            overflow-x: auto;
+        }
+        ul {
+            margin-left: 50px;
+        }
+        code {
+            background-color: #f2f2f2;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JS_lesson_15: Форматирование строк (My String Formatting)</h1>
+
+    <h2>Что такое строка?</h2>
+    <p><strong>Строка</strong> (string) — это текст. В JavaScript строка может быть записана:</p>
+    <ul>
+        <li>в одинарных кавычках: <code>'Привет'</code></li>
+        <li>в двойных кавычках: <code>"Привет"</code></li>
+        <li>в шаблонных строках (обратные кавычки): <code>`Привет`</code></li>
+    </ul>
+
+    <h2>Конкатенация строк с числами</h2>
+    <p>Можно соединять текст и числа с помощью знака <code>+</code>:</p>
+    <pre>
+let name = "Elmar";
+let age = 20;
+console.log("Меня зовут " + name + ", мне " + age + " лет.");
+    </pre>
+
+    <h2>Шаблонные строки (template literals)</h2>
+    <p>Это современный и удобный способ подставлять значения прямо внутрь строки, используя обратные кавычки (``) и синтаксис <code>${...}</code>:</p>
+    <pre>
+let name = "Elmar";
+let age = 20;
+console.log(`Меня зовут ${name}, мне ${age} лет.`);
+    </pre>
+
+    <p>Это работает даже с выражениями:</p>
+    <pre>
+console.log(`Через год мне будет ${age + 1} лет.`);
+    </pre>
+
+    <h2>Форматирование строки с переходом на новую строку</h2>
+    <p>Символ <code>\n</code> создаёт переход на новую строку:</p>
+    <pre>
+console.log("Привет\nМир!");
+    </pre>
+
+    <p>Вывод:</p>
+    <pre>
+Привет
+Мир!
+    </pre>
+
+    <h2>Пример: функция форматирования строки</h2>
+    <pre>
+function my_string_formatting(firstname, lastname, age) {
+  console.log(`Hello, my name is ${firstname} ${lastname}, I'm ${age}.
+`);
+}
+    </pre>
+
+    <p>Вызов:</p>
+    <pre>
+my_string_formatting("Elmar", "Rahimov", 20);
+    </pre>
+
+    <p>Результат:</p>
+    <pre>
+Hello, my name is Elmar Rahimov, I'm 20.
+    </pre>
+
+    <h2>Дополнительно: строковые методы</h2>
+    <ul>
+        <li><code>.toUpperCase()</code> — переводит строку в ВЕРХНИЙ РЕГИСТР</li>
+        <li><code>.toLowerCase()</code> — переводит строку в нижний регистр</li>
+        <li><code>.length</code> — длина строки</li>
+    </ul>
+
+    <h2>Итоги</h2>
+    <ul>
+        <li>Строки — текст в кавычках</li>
+        <li>Можно объединять строки с числами с помощью <code>+</code></li>
+        <li>Шаблонные строки — удобный способ вставки переменных</li>
+        <li><code>\n</code> — переход на новую строку</li>
+        <li><code>console.log()</code> — выводит информацию в терминал</li>
+        <li>Функции могут использовать строки и числа вместе</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>JS_lesson_1: JavaScript, переменные и целые числа</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 40px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #4a90e2;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #4a90e2;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        p, pre {
+            margin-left: 20px;
+        }
+        pre {
+            background-color: #eef;
+            padding: 10px;
+            border-left: 4px solid #4a90e2;
+            overflow-x: auto;
+        }
+        ul {
+            margin-left: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JS_lesson_1: JavaScript, переменные и целые числа</h1>
+
+    <h2>1. Что такое HTML, CSS и JavaScript?</h2>
+    <p><strong>HTML</strong> — это структура сайта: заголовки, текст, кнопки.</p>
+    <p><strong>CSS</strong> — это оформление сайта: цвета, размеры, отступы.</p>
+    <p><strong>JavaScript</strong> — это логика сайта: делает сайт интерактивным.</p>
+
+    <h2>2. Что такое переменная?</h2>
+    <p>Переменная — это как коробка с именем. В неё можно положить что-то, например, число 34:</p>
+    <pre>let age = 34;</pre>
+
+    <h2>3. Зачем нужны переменные?</h2>
+    <p>Переменные позволяют хранить данные и использовать их позже. Например:</p>
+    <pre>let name = "Elmar";</pre>
+
+    <h2>4. Как объявлять переменные?</h2>
+    <ul>
+        <li><strong>let</strong> — переменная, которую можно менять</li>
+        <li><strong>const</strong> — переменная, которую менять нельзя</li>
+        <li><strong>var</strong> — устаревший способ, лучше не использовать</li>
+    </ul>
+
+    <h2>5. Что такое типы данных?</h2>
+    <p>Тип данных — это то, что находится в переменной:</p>
+    <ul>
+        <li>Число: <code>34</code></li>
+        <li>Строка: <code>"Elmar"</code></li>
+        <li>Логическое значение: <code>true / false</code></li>
+    </ul>
+
+    <h2>6. Целые числа (integer)</h2>
+    <p><strong>Integer</strong> — это число без запятой, например: <code>0, 5, -10, 100</code></p>
+    <pre>let apples = 10;</pre>
+
+    <h2>7. Как использовать переменные?</h2>
+    <pre>
+let age = 18;
+console.log(age); // покажет 18
+    </pre>
+
+    <h2>8. Как вывести данные в консоль?</h2>
+    <p>Для вывода используем команду:</p>
+    <pre>console.log(...);</pre>
+
+    <h2>9. Как открыть консоль в браузере?</h2>
+    <ul>
+        <li>Открыть HTML-файл в браузере</li>
+        <li>Правый клик → Инструменты разработчика</li>
+        <li>Перейти на вкладку "Console"</li>
+    </ul>
+
+    <h2>10. Как вставить JavaScript в HTML?</h2>
+    <pre>
+&lt;script&gt;
+  let age = 34;
+  console.log("Возраст: " + age);
+&lt;/script&gt;
+    </pre>
+
+    <h2>11. Частые ошибки новичков</h2>
+    <ul>
+        <li>Имя переменной не может начинаться с цифры</li>
+        <li>Нельзя использовать пробелы в имени</li>
+        <li>Нужно обязательно использовать <code>let</code> или <code>const</code></li>
+    </ul>
+
+    <h2>12. Что дальше?</h2>
+    <p>Теперь ты знаешь:</p>
+    <ul>
+        <li>Как создавать переменные</li>
+        <li>Как использовать числа</li>
+        <li>Как встроить JavaScript в HTML</li>
+    </ul>
+
+    <h2>13. Итоги</h2>
+    <ul>
+        <li><strong>HTML</strong> — структура</li>
+        <li><strong>CSS</strong> — оформление</li>
+        <li><strong>JavaScript</strong> — поведение</li>
+        <li><strong>Переменные</strong> — хранят данные</li>
+        <li><strong>Integer</strong> — целое число</li>
+        <li><strong>console.log</strong> — вывод в консоль</li>
+        <li><strong>&lt;script&gt;</strong> — вставка кода в HTML</li>
+    </ul>
+</body>
+</html>

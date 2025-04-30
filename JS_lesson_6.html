@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>JS_lesson_6: Функции, параметры и обратные циклы</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            margin: 40px;
+            line-height: 1.7;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #4a90e2;
+            border-bottom: 2px solid #4a90e2;
+            padding-bottom: 6px;
+            margin-top: 40px;
+        }
+        p, pre {
+            margin-left: 20px;
+        }
+        pre {
+            background-color: #eef;
+            padding: 12px;
+            border-left: 4px solid #4a90e2;
+            overflow-x: auto;
+        }
+        ul {
+            margin-left: 50px;
+        }
+        code {
+            background-color: #f2f2f2;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JS_lesson_6: Функции, параметры и обратные циклы</h1>
+
+    <h2>ex01 – First Function</h2>
+    <p>Функция — это блок кода, который можно вызвать по имени. Она нужна, чтобы не повторять один и тот же код несколько раз.</p>
+
+    <h3>Как создать простую функцию:</h3>
+    <pre>
+function my_first_function() {
+  console.log("my_first_function");
+}
+    </pre>
+
+    <p>В этом примере:</p>
+    <ul>
+        <li><code>function</code> — ключевое слово, чтобы создать функцию</li>
+        <li><code>my_first_function</code> — имя функции</li>
+        <li><code>()</code> — скобки, в которых могут быть параметры</li>
+        <li><code>{ ... }</code> — тело функции, что она будет делать</li>
+    </ul>
+
+    <h3>Как вызвать функцию:</h3>
+    <pre>
+my_first_function(); // Вызывает функцию
+    </pre>
+
+    <p>Функцию можно вызывать сколько угодно раз:</p>
+    <pre>
+my_first_function();
+my_first_function();
+    </pre>
+
+    <p>Функции стоит использовать, когда:</p>
+    <ul>
+        <li>Нужно повторить одно и то же действие</li>
+        <li>Хочешь сделать код более понятным</li>
+        <li>Хочешь разделить программу на маленькие логические части</li>
+    </ul>
+
+    <h2>ex02 – Function With Params</h2>
+    <p>Функция может принимать <strong>параметры</strong> — значения, которые передаются при вызове и влияют на поведение функции.</p>
+
+    <h3>Пример:</h3>
+    <pre>
+function detonation_in(seconds_left) {
+  console.log("detonation in... " + seconds_left + " seconds.");
+}
+    </pre>
+
+    <p>Теперь мы можем вызывать эту функцию с разными параметрами:</p>
+    <pre>
+detonation_in(5); // Вывод: detonation in... 5 seconds.
+detonation_in(3); // Вывод: detonation in... 3 seconds.
+    </pre>
+
+    <h3>Параметры функции:</h3>
+    <ul>
+        <li><code>seconds_left</code> — это переменная внутри функции</li>
+        <li>Она получает значение, которое мы передаём при вызове</li>
+        <li>Можно передавать числа, строки, даже другие функции</li>
+    </ul>
+
+    <h2>Что такое цикл while в обратном порядке?</h2>
+    <p>Можно сделать цикл, который идёт <strong>сверху вниз</strong> — от 10 до 1. Это называется обратный отсчёт. Мы используем <code>while</code> и <code>--</code> (декремент):</p>
+
+    <pre>
+let timer = 10;
+while (timer > 0) {
+  detonation_in(timer);
+  timer--;
+}
+    </pre>
+
+    <p>Этот цикл каждый раз уменьшает значение <code>timer</code> и вызывает функцию <code>detonation_in()</code>.</p>
+
+    <h3>Что такое декремент?</h3>
+    <p>Это уменьшение переменной на 1. Записывается как <code>--</code>:</p>
+    <pre>
+let x = 5;
+x--; // теперь x = 4
+    </pre>
+
+    <p>Также можно писать <code>x -= 1;</code>, результат тот же.</p>
+
+    <h2>Расширенные варианты</h2>
+
+    <h3>Можно передавать несколько параметров:</h3>
+    <pre>
+function greet(name, time) {
+  console.log("Hello " + name + "! It's " + time);
+}
+greet("Elmar", "morning");
+    </pre>
+
+    <h3>Можно вернуть значение из функции с помощью <code>return</code>:</h3>
+    <pre>
+function add(a, b) {
+  return a + b;
+}
+let result = add(3, 4); // result = 7
+    </pre>
+
+    <h3>Анонимные и стрелочные функции (современный стиль):</h3>
+    <pre>
+const sayHi = () => {
+  console.log("Hi!");
+};
+sayHi();
+    </pre>
+
+    <h2>Итоги</h2>
+    <ul>
+        <li><code>function имя() {...}</code> — создаёт функцию</li>
+        <li><code>имя();</code> — вызывает функцию</li>
+        <li><code>function с параметрами</code> — позволяет передавать значения внутрь</li>
+        <li><code>return</code> — возвращает значение</li>
+        <li><code>timer--</code> — уменьшает переменную на 1</li>
+        <li><code>while (timer > 0)</code> — цикл обратного отсчёта</li>
+    </ul>
+</body>
+</html>

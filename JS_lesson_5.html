@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>JS_lesson_5: Цикл while и инкремент</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            margin: 40px;
+            line-height: 1.7;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #4a90e2;
+            border-bottom: 2px solid #4a90e2;
+            padding-bottom: 6px;
+            margin-top: 40px;
+        }
+        p, pre {
+            margin-left: 20px;
+        }
+        pre {
+            background-color: #eef;
+            padding: 12px;
+            border-left: 4px solid #4a90e2;
+            overflow-x: auto;
+        }
+        ul {
+            margin-left: 50px;
+        }
+        code {
+            background-color: #f2f2f2;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JS_lesson_5: Цикл while и инкремент</h1>
+
+    <h2>Что такое цикл <code>while</code>?</h2>
+    <p>Цикл — это инструмент в программировании, который позволяет повторять одни и те же действия несколько раз.</p>
+    <p>Цикл <code>while</code> проверяет условие и <strong>выполняет блок кода, пока это условие — правда (true)</strong>.</p>
+
+    <h3>Общая форма цикла <code>while</code>:</h3>
+    <pre>
+while (условие) {
+  // код, который будет повторяться
+}
+    </pre>
+
+    <p>Пример:</p>
+    <pre>
+let index = 0;
+while (index < 5) {
+  console.log("Привет!");
+  index++;
+}
+    </pre>
+
+    <p>Этот код напечатает "Привет!" 5 раз, потому что условие <code>index < 5</code> остаётся верным, пока <code>index</code> не станет 5.</p>
+
+    <h2>Что такое инкремент?</h2>
+    <p><strong>Инкремент</strong> — это увеличение переменной на 1. Обозначается <code>++</code>.</p>
+    <pre>
+let i = 0;
+i++; // теперь i равно 1
+    </pre>
+
+    <p>Также существует <strong>декремент</strong> — уменьшение на 1: <code>--</code></p>
+    <pre>
+let j = 5;
+j--; // теперь j равно 4
+    </pre>
+
+    <p>Ты можешь использовать и другие способы изменения значений:</p>
+    <ul>
+        <li><code>x += 2;</code> — прибавить 2</li>
+        <li><code>x -= 3;</code> — вычесть 3</li>
+        <li><code>x *= 2;</code> — умножить</li>
+        <li><code>x /= 2;</code> — поделить</li>
+    </ul>
+
+    <h2>Как избежать бесконечного цикла?</h2>
+    <p>Если ты забудешь изменить переменную внутри цикла, он может повторяться бесконечно и "зависнет".</p>
+    <pre>
+let index = 0;
+while (index < 10) {
+  console.log(index);
+  // НЕТ index++ — цикл будет вечным!
+}
+    </pre>
+    <p><strong>Решение:</strong> всегда убедись, что переменная <strong>меняется</strong>, чтобы условие в какой-то момент стало ложным (false).</p>
+
+    <h2>Другие важные моменты</h2>
+
+    <h3>Можно использовать условие true:</h3>
+    <pre>
+let count = 0;
+while (true) {
+  console.log("Цикл идёт...");
+  count++;
+  if (count === 3) break; // остановка с помощью break
+}
+    </pre>
+
+    <h3>Команда <code>break</code></h3>
+    <p>Позволяет прервать цикл в любом месте, даже если условие всё ещё true.</p>
+
+    <h3>Команда <code>continue</code></h3>
+    <p>Пропускает одну итерацию цикла и переходит к следующей.</p>
+    <pre>
+let i = 0;
+while (i < 5) {
+  i++;
+  if (i === 3) continue;
+  console.log(i); // не выведет 3
+}
+    </pre>
+
+    <h2>Итоги</h2>
+    <ul>
+        <li><code>while</code> — цикл, выполняющий код, пока условие true</li>
+        <li><code>index++</code> — инкремент (увеличение значения на 1)</li>
+        <li><code>break</code> — остановка цикла</li>
+        <li><code>continue</code> — пропуск итерации</li>
+        <li>Следи за условием, чтобы избежать бесконечных циклов</li>
+    </ul>
+</body>
+</html>
