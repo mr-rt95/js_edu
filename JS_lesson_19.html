@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>JS_lesson_19: Функции в JavaScript</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            margin: 40px;
+            line-height: 1.7;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #4a90e2;
+            border-bottom: 2px solid #4a90e2;
+            padding-bottom: 6px;
+            margin-top: 40px;
+        }
+        p, pre {
+            margin-left: 20px;
+        }
+        pre {
+            background-color: #eef;
+            padding: 12px;
+            border-left: 4px solid #4a90e2;
+            overflow-x: auto;
+        }
+        ul {
+            margin-left: 50px;
+        }
+        code {
+            background-color: #f2f2f2;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JS_lesson_19: Функции в JavaScript</h1>
+
+    <h2>Что такое функция?</h2>
+    <p>Функция — это блок кода, который можно вызывать по имени. Она может выполнять действия и возвращать результат.</p>
+
+    <h2>Как объявить функцию?</h2>
+    <pre>
+function имя(параметры) {
+  // действия
+}
+    </pre>
+
+    <h3>Пример:</h3>
+    <pre>
+function greet(name) {
+  console.log("Привет, " + name + "!");
+}
+greet("Elmar"); // Привет, Elmar!
+    </pre>
+
+    <h2>Как передавать параметры</h2>
+    <p>Параметры — это переменные, передаваемые в функцию при вызове. Их можно использовать внутри функции.</p>
+    <pre>
+function square(x) {
+  return x * x;
+}
+console.log(square(5)); // 25
+    </pre>
+
+    <h2>Разница между return и console.log()</h2>
+
+    <h3>return:</h3>
+    <ul>
+        <li>Завершает выполнение функции</li>
+        <li>Возвращает значение наружу</li>
+        <li>Можно сохранить результат в переменную</li>
+    </ul>
+    <pre>
+function add(a, b) {
+  return a + b;
+}
+let sum = add(2, 3); // sum = 5
+    </pre>
+
+    <h3>console.log():</h3>
+    <ul>
+        <li>Выводит информацию в терминал или консоль</li>
+        <li>Не возвращает значение</li>
+    </ul>
+    <pre>
+function printSum(a, b) {
+  console.log(a + b);
+}
+printSum(2, 3); // выводит 5
+    </pre>
+
+    <h2>Область видимости переменных</h2>
+    <p>Переменные, объявленные внутри функции, <strong>не видны снаружи</strong> — они "локальные".</p>
+    <pre>
+function testScope() {
+  let message = "внутри функции";
+  console.log(message);
+}
+testScope();
+// console.log(message); // Ошибка! message не видна тут
+    </pre>
+
+    <h2>Аргументы vs Параметры</h2>
+    <ul>
+        <li><strong>Параметры</strong> — переменные, указанные при объявлении функции: <code>function hello(name)</code></li>
+        <li><strong>Аргументы</strong> — значения, которые ты передаёшь при вызове: <code>hello("Elmar")</code></li>
+    </ul>
+
+    <h2>Итоги</h2>
+    <ul>
+        <li><code>function</code> — ключевое слово для создания функции</li>
+        <li><code>return</code> — возвращает результат</li>
+        <li><code>console.log()</code> — выводит на экран</li>
+        <li>Параметры внутри объявления, аргументы при вызове</li>
+        <li>Локальные переменные видны только внутри функции</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>JS_lesson_18: Циклы в JavaScript</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            margin: 40px;
+            line-height: 1.7;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #4a90e2;
+            border-bottom: 2px solid #4a90e2;
+            padding-bottom: 6px;
+            margin-top: 40px;
+        }
+        p, pre {
+            margin-left: 20px;
+        }
+        pre {
+            background-color: #eef;
+            padding: 12px;
+            border-left: 4px solid #4a90e2;
+            overflow-x: auto;
+        }
+        ul {
+            margin-left: 50px;
+        }
+        code {
+            background-color: #f2f2f2;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JS_lesson_18: Циклы в JavaScript</h1>
+
+    <h2>Зачем нужны циклы?</h2>
+    <p>Циклы позволяют <strong>повторять действия</strong> много раз. Особенно удобно использовать их при работе со строками, массивами и числами.</p>
+
+    <h2>Цикл <code>for</code></h2>
+    <p>Самый популярный цикл — <strong>со счётчиком</strong>:</p>
+    <pre>
+for (let i = 0; i < 5; i++) {
+  console.log("i =", i);
+}
+    </pre>
+
+    <ul>
+        <li><code>let i = 0</code> — старт цикла (начальное значение)</li>
+        <li><code>i < 5</code> — условие (цикл работает, пока оно true)</li>
+        <li><code>i++</code> — увеличение счётчика на 1</li>
+    </ul>
+
+    <h3>Пример с массивом:</h3>
+    <pre>
+let arr = ["a", "b", "c"];
+for (let i = 0; i < arr.length; i++) {
+  console.log(arr[i]);
+}
+    </pre>
+
+    <h2>Цикл <code>while</code></h2>
+    <p>Цикл <code>while</code> выполняется <strong>пока условие истинно</strong>:</p>
+    <pre>
+let i = 0;
+while (i < 3) {
+  console.log("Число:", i);
+  i++;
+}
+    </pre>
+
+    <h2>Прерывание цикла: <code>break</code> и <code>return</code></h2>
+
+    <h3>break</h3>
+    <p>Останавливает цикл полностью:</p>
+    <pre>
+for (let i = 0; i < 10; i++) {
+  if (i === 5) break;
+  console.log(i);
+}
+    </pre>
+
+    <h3>return</h3>
+    <p>Прерывает выполнение функции, в том числе и цикл внутри неё:</p>
+    <pre>
+function findX(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === "x") return i;
+  }
+  return -1;
+}
+    </pre>
+
+    <h2>Использование цикла для поиска элемента</h2>
+    <pre>
+let animals = ["cat", "dog", "parrot"];
+for (let i = 0; i < animals.length; i++) {
+  if (animals[i] === "dog") {
+    console.log("Нашли собаку на позиции", i);
+  }
+}
+    </pre>
+
+    <h2>Вывод каждого элемента</h2>
+    <p>Простой цикл для вывода значений:</p>
+    <pre>
+let nums = [2, 4, 6, 8];
+for (let i = 0; i < nums.length; i++) {
+  console.log(nums[i]);
+}
+    </pre>
+
+    <h2>Подсчёт количества</h2>
+    <p>Например, считаем сколько букв "a" в слове:</p>
+    <pre>
+let word = "banana";
+let count = 0;
+
+for (let i = 0; i < word.length; i++) {
+  if (word[i] === "a") {
+    count++;
+  }
+}
+console.log("Количество 'a':", count);
+    </pre>
+
+    <h2>Итоги</h2>
+    <ul>
+        <li><code>for</code> — цикл со счётчиком</li>
+        <li><code>while</code> — цикл с условием</li>
+        <li><code>i++</code> — увеличение значения на 1</li>
+        <li><code>break</code> — прерывает цикл</li>
+        <li><code>return</code> — прерывает функцию и возвращает значение</li>
+        <li>Циклы используются для поиска, вывода, подсчёта</li>
+    </ul>
+</body>
+</html>

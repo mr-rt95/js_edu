@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>JS_lesson_17: Основы массивов в JavaScript</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            margin: 40px;
+            line-height: 1.7;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #4a90e2;
+            border-bottom: 2px solid #4a90e2;
+            padding-bottom: 6px;
+            margin-top: 40px;
+        }
+        p, pre {
+            margin-left: 20px;
+        }
+        pre {
+            background-color: #eef;
+            padding: 12px;
+            border-left: 4px solid #4a90e2;
+            overflow-x: auto;
+        }
+        ul {
+            margin-left: 50px;
+        }
+        code {
+            background-color: #f2f2f2;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JS_lesson_17: Основы массивов в JavaScript</h1>
+
+    <h2>Что такое массив?</h2>
+    <p><strong>Массив</strong> (array) — это упорядоченный список значений. Каждый элемент массива имеет индекс (позицию), начиная с 0.</p>
+
+    <h3>Как создать массив:</h3>
+    <pre>
+let letters = ["a", "b", "c"];
+let numbers = [1, 2, 3, 4, 5];
+    </pre>
+
+    <h2>Как получить доступ к элементам массива?</h2>
+    <pre>
+let fruits = ["apple", "banana", "cherry"];
+console.log(fruits[0]); // apple
+console.log(fruits[2]); // cherry
+    </pre>
+
+    <p>Индексация начинается с <strong>нуля</strong>!</p>
+
+    <h2>Как узнать длину массива?</h2>
+    <p>Используется свойство <code>.length</code>:</p>
+    <pre>
+let animals = ["dog", "cat", "lion"];
+console.log(animals.length); // 3
+    </pre>
+
+    <h2>Как перебрать массив?</h2>
+
+    <h3>Цикл for:</h3>
+    <pre>
+let arr = [10, 20, 30];
+for (let i = 0; i < arr.length; i++) {
+  console.log(arr[i]);
+}
+    </pre>
+
+    <h3>Цикл while:</h3>
+    <pre>
+let i = 0;
+while (i < arr.length) {
+  console.log(arr[i]);
+  i++;
+}
+    </pre>
+
+    <h3>Цикл for...of (дополнительно):</h3>
+    <pre>
+for (let item of arr) {
+  console.log(item);
+}
+    </pre>
+
+    <h2>Основные методы массивов (базово)</h2>
+
+    <h3>push()</h3>
+    <p>Добавляет элемент в конец массива:</p>
+    <pre>
+let colors = ["red", "blue"];
+colors.push("green"); // ["red", "blue", "green"]
+    </pre>
+
+    <h3>pop()</h3>
+    <p>Удаляет последний элемент массива:</p>
+    <pre>
+colors.pop(); // ["red", "blue"]
+    </pre>
+
+    <h3>indexOf()</h3>
+    <p>Находит индекс элемента:</p>
+    <pre>
+let idx = colors.indexOf("blue"); // 1
+    </pre>
+
+    <h3>join()</h3>
+    <p>Объединяет все элементы массива в строку:</p>
+    <pre>
+let str = colors.join(", "); // "red, blue"
+    </pre>
+
+    <h2>Тип данных массива</h2>
+    <pre>
+console.log(typeof [1, 2, 3]); // object (особенность JavaScript)
+Array.isArray([1, 2, 3]);      // true — лучший способ проверить
+    </pre>
+
+    <h2>Итоги</h2>
+    <ul>
+        <li>Массив — список значений</li>
+        <li>Индексация с нуля</li>
+        <li><code>.length</code> — количество элементов</li>
+        <li>Перебор: <code>for</code>, <code>while</code>, <code>for...of</code></li>
+        <li>Методы: <code>push()</code>, <code>pop()</code>, <code>indexOf()</code>, <code>join()</code></li>
+        <li><code>Array.isArray()</code> — проверка, что это массив</li>
+    </ul>
+</body>
+</html>
